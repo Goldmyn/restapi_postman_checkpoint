@@ -10,6 +10,7 @@ dotenv.config({ path: "./config/.env" });
 app.use(express.json());
 app.use("/api/v1", userRoutes);
 
+// connect to mongoose database
 async function connectDB() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
